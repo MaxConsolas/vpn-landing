@@ -2,41 +2,44 @@
 
 import { motion } from "framer-motion"
 import { Globe, Shield, Zap, Lock, Eye, Gauge } from "lucide-react"
-
-const features = [
-  {
-    icon: Globe,
-    title: "Global Reach",
-    description: "Connect to servers across Europe and Asia for optimal performance",
-  },
-  {
-    icon: Shield,
-    title: "Military-Grade Encryption",
-    description: "Your data is protected with state-of-the-art encryption protocols",
-  },
-  {
-    icon: Zap,
-    title: "Lightning Fast",
-    description: "Experience blazing speeds with our optimized server infrastructure",
-  },
-  {
-    icon: Lock,
-    title: "Zero Logs",
-    description: "We never track, collect, or share your private data",
-  },
-  {
-    icon: Eye,
-    title: "Anonymous Browsing",
-    description: "Browse the internet without revealing your identity or location",
-  },
-  {
-    icon: Gauge,
-    title: "High Performance",
-    description: "Optimized for streaming, gaming, and bandwidth-intensive tasks",
-  },
-]
+import { useLanguage } from "./language-provider"
 
 export function FeaturesGrid() {
+  const { t } = useLanguage()
+
+  const features = [
+    {
+      icon: Globe,
+      title: t.features.globalReach.title,
+      description: t.features.globalReach.description,
+    },
+    {
+      icon: Shield,
+      title: t.features.encryption.title,
+      description: t.features.encryption.description,
+    },
+    {
+      icon: Zap,
+      title: t.features.speed.title,
+      description: t.features.speed.description,
+    },
+    {
+      icon: Lock,
+      title: t.features.logs.title,
+      description: t.features.logs.description,
+    },
+    {
+      icon: Eye,
+      title: t.features.anonymous.title,
+      description: t.features.anonymous.description,
+    },
+    {
+      icon: Gauge,
+      title: t.features.performance.title,
+      description: t.features.performance.description,
+    },
+  ]
+
   return (
     <section className="relative py-24 px-4">
       <div className="max-w-6xl mx-auto">
@@ -47,10 +50,8 @@ export function FeaturesGrid() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Cutting-Edge Features</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Built with the latest technology to provide you with the best VPN experience
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.features.title}</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t.features.subtitle}</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

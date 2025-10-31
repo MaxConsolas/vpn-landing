@@ -4,15 +4,19 @@ import { useState } from "react"
 import { WaveLinesBackground } from "./backgrounds/wave-lines-bg"
 import { ScanLinesBackground } from "./backgrounds/scan-lines-bg"
 import { OscillatingWavesBg } from "./backgrounds/oscillating-waves-bg"
+import { WorldMapBg } from "./backgrounds/world-map-bg"
+import { useLanguage } from "./language-provider"
 
 const backgrounds = {
-  waves: { component: WaveLinesBackground, name: "Wave Lines" },
-  scan: { component: ScanLinesBackground, name: "Scan Lines" },
-  oscillating: { component: OscillatingWavesBg, name: "Oscillating Waves" },
+  waves: { component: WaveLinesBackground, name: "waves" },
+  scan: { component: ScanLinesBackground, name: "scan" },
+  oscillating: { component: OscillatingWavesBg, name: "oscillating" },
+  worldMap: { component: WorldMapBg, name: "worldMap" },
 }
 
 export function BackgroundSelector() {
   const [selected, setSelected] = useState<keyof typeof backgrounds>("waves")
+  const { t } = useLanguage()
   const BackgroundComponent = backgrounds[selected].component
 
   return (
@@ -21,7 +25,7 @@ export function BackgroundSelector() {
 
       {/* Selector UI - positioned in bottom right */}
       <div className="fixed bottom-4 right-4 z-50 bg-background/80 backdrop-blur-sm border border-border rounded-lg p-3">
-        <p className="text-xs text-muted-foreground mb-2">Background Style:</p>
+        <p className="text-xs text-muted-foreground mb-2">{t.background.label}</p>
         <div className="flex flex-col gap-1">
           {Object.entries(backgrounds).map(([key, { name }]) => (
             <button
@@ -33,7 +37,7 @@ export function BackgroundSelector() {
                   : "hover:bg-accent text-muted-foreground"
               }`}
             >
-              {name}
+              {t.background[name as keyof typeof t.background]}
             </button>
           ))}
         </div>

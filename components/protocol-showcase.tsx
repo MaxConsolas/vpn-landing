@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Code2, Shield, Zap, Lock, Network, Cpu } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { useLanguage } from "./language-provider"
 
 const protocols = [
   { name: "VLESS", featured: true, icon: Zap },
@@ -14,6 +15,8 @@ const protocols = [
 ]
 
 export function ProtocolShowcase() {
+  const { t } = useLanguage()
+
   return (
     <section className="relative py-24 px-4 bg-muted/30">
       <div className="max-w-6xl mx-auto">
@@ -24,10 +27,10 @@ export function ProtocolShowcase() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Multi-Protocol Support</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.protocols.title}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Powered by <span className="text-primary font-mono font-semibold">VLESS</span> with support for multiple
-            protocols
+            {t.protocols.subtitle} <span className="text-primary font-mono font-semibold">VLESS</span>{" "}
+            {t.protocols.subtitleSuffix}
           </p>
         </motion.div>
 
@@ -50,7 +53,9 @@ export function ProtocolShowcase() {
                   } backdrop-blur-sm`}
                 >
                   {protocol.featured && (
-                    <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground">Primary</Badge>
+                    <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground">
+                      {t.protocols.primary}
+                    </Badge>
                   )}
 
                   <div className="space-y-4">
@@ -65,9 +70,7 @@ export function ProtocolShowcase() {
                     <div>
                       <h3 className="text-2xl font-bold font-mono mb-2">{protocol.name}</h3>
                       <p className="text-sm text-muted-foreground">
-                        {protocol.featured
-                          ? "Next-generation protocol with enhanced performance and security"
-                          : "Reliable and secure connection protocol"}
+                        {protocol.featured ? t.protocols.vlessDesc : t.protocols.otherDesc}
                       </p>
                     </div>
 
@@ -75,7 +78,7 @@ export function ProtocolShowcase() {
                       <div className="pt-4 border-t border-primary/20">
                         <div className="flex items-center gap-2 text-sm">
                           <Code2 className="h-4 w-4 text-primary" />
-                          <span className="font-mono text-primary">Optimized for speed & security</span>
+                          <span className="font-mono text-primary">{t.protocols.optimized}</span>
                         </div>
                       </div>
                     )}
@@ -98,11 +101,8 @@ export function ProtocolShowcase() {
               <Code2 className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-2">Why VLESS?</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                VLESS is a lightweight, high-performance protocol designed for modern VPN needs. It offers superior
-                speed, enhanced security, and minimal overhead compared to traditional protocols.
-              </p>
+              <h3 className="text-xl font-bold mb-2">{t.protocols.whyVless}</h3>
+              <p className="text-muted-foreground leading-relaxed">{t.protocols.whyVlessDesc}</p>
             </div>
           </div>
         </motion.div>

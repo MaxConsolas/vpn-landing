@@ -4,13 +4,15 @@ import { ServerLocations } from "@/components/server-locations"
 import { ProtocolShowcase } from "@/components/protocol-showcase"
 import { FeaturesGrid } from "@/components/features-grid"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { LanguageToggle } from "@/components/language-toggle"
 
 export default function Home() {
   return (
     <main className="relative min-h-screen">
       <BackgroundSelector />
 
-      <div className="fixed top-6 right-6 z-50">
+      <div className="fixed top-6 right-6 z-50 flex items-center gap-3">
+        <LanguageToggle />
         <ThemeToggle />
       </div>
 

@@ -3,38 +3,41 @@
 import { motion } from "framer-motion"
 import { Server, MapPin, Activity, Building2 } from "lucide-react"
 import { Card } from "@/components/ui/card"
-
-const servers = [
-  {
-    country: "Germany",
-    code: "DE",
-    flag: "🇩🇪",
-    city: "Frankfurt",
-    datacenter: "Hetzner",
-    latency: "12ms",
-    load: "23%",
-  },
-  {
-    country: "Finland",
-    code: "FI",
-    flag: "🇫🇮",
-    city: "Helsinki",
-    datacenter: "FirstColo",
-    latency: "18ms",
-    load: "31%",
-  },
-  {
-    country: "Kazakhstan",
-    code: "KZ",
-    flag: "🇰🇿",
-    city: "Almaty",
-    datacenter: "DataForest",
-    latency: "45ms",
-    load: "15%",
-  },
-]
+import { useLanguage } from "./language-provider"
 
 export function ServerLocations() {
+  const { t } = useLanguage()
+
+  const servers = [
+    {
+      country: t.locations.germany,
+      code: "DE",
+      flag: "🇩🇪",
+      city: t.locations.city.frankfurt,
+      datacenter: "Hetzner",
+      latency: "12ms",
+      load: "23%",
+    },
+    {
+      country: t.locations.finland,
+      code: "FI",
+      flag: "🇫🇮",
+      city: t.locations.city.helsinki,
+      datacenter: "FirstColo",
+      latency: "18ms",
+      load: "31%",
+    },
+    {
+      country: t.locations.kazakhstan,
+      code: "KZ",
+      flag: "🇰🇿",
+      city: t.locations.city.almaty,
+      datacenter: "DataForest",
+      latency: "45ms",
+      load: "15%",
+    },
+  ]
+
   return (
     <section className="relative py-24 px-4">
       <div className="max-w-6xl mx-auto">
@@ -45,10 +48,8 @@ export function ServerLocations() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Global Server Network</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Connect to high-performance servers across three strategic locations
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.locations.title}</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t.locations.subtitle}</p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -68,7 +69,7 @@ export function ServerLocations() {
                     <div className="text-5xl">{server.flag}</div>
                     <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20">
                       <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-                      <span className="text-xs font-mono text-green-500">Online</span>
+                      <span className="text-xs font-mono text-green-500">{t.locations.online}</span>
                     </div>
                   </div>
 
@@ -88,14 +89,14 @@ export function ServerLocations() {
                     <div>
                       <div className="flex items-center gap-2 text-muted-foreground mb-1">
                         <Activity className="h-4 w-4" />
-                        <span className="text-xs">Latency</span>
+                        <span className="text-xs">{t.locations.ping}</span>
                       </div>
                       <div className="text-lg font-mono font-semibold text-primary">{server.latency}</div>
                     </div>
                     <div>
                       <div className="flex items-center gap-2 text-muted-foreground mb-1">
                         <Server className="h-4 w-4" />
-                        <span className="text-xs">Load</span>
+                        <span className="text-xs">{t.locations.status}</span>
                       </div>
                       <div className="text-lg font-mono font-semibold text-primary">{server.load}</div>
                     </div>
