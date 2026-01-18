@@ -2,16 +2,16 @@ export const translations = {
   en: {
     // Hero Section
     hero: {
-      badge: "Next-Gen VPN Technology",
-      title: "VPN",
-      subtitle: "Experience the future of secure connectivity with cutting-edge",
+      badge: "Protected by TLS 1.3",
+      title: "IRIS",
+      subtitle: "Fast and secure VPN. No blocks. Based on",
       protocol: "VLESS",
-      protocolSuffix: "protocol technology",
+      protocolSuffix: "",
       getStarted: "Get Started",
       viewLocations: "View Locations",
       stats: {
         servers: "Global Servers",
-        protocols: "Protocols",
+        protocols: "Main Protocol",
         uptime: "Uptime",
       },
     },
@@ -54,8 +54,8 @@ export const translations = {
         description: "Connect to servers across Europe and Asia for optimal performance",
       },
       encryption: {
-        title: "Military-Grade Encryption",
-        description: "Your data is protected with state-of-the-art encryption protocols",
+        title: "TLS Encryption",
+        description: "Your data is protected with modern encryption protocols",
       },
       speed: {
         title: "Lightning Fast",
@@ -82,20 +82,26 @@ export const translations = {
       oscillating: "Oscillating Waves",
       worldMap: "World Map",
     },
+    // CTA Section
+    cta: {
+      title: "Try Free Trial Period",
+      subtitle: "No card binding. No registration. No limits",
+      button: "Start in Telegram",
+    },
   },
   ru: {
     // Hero Section
     hero: {
-      badge: "VPN технология нового поколения",
-      title: "VPN",
-      subtitle: "Испытайте будущее безопасного подключения с передовой технологией протокола",
+      badge: "Защищен TLS 1.3",
+      title: "IRIS",
+      subtitle: "Быстрый и безопасный VPN. Без блокировок. На основе",
       protocol: "VLESS",
       protocolSuffix: "",
       getStarted: "Начать",
       viewLocations: "Посмотреть локации",
       stats: {
-        servers: "Глобальные серверы",
-        protocols: "Протоколы",
+        servers: "Глобальных сервера",
+        protocols: "Главный протокол",
         uptime: "Время работы",
       },
     },
@@ -138,7 +144,7 @@ export const translations = {
         description: "Подключайтесь к серверам в Европе и Азии для оптимальной производительности",
       },
       encryption: {
-        title: "Военное шифрование",
+        title: "TLS шифрование",
         description: "Ваши данные защищены современными протоколами шифрования",
       },
       speed: {
@@ -165,6 +171,12 @@ export const translations = {
       scan: "Сканирующие линии",
       oscillating: "Колеблющиеся волны",
       worldMap: "Карта мира",
+    },
+    // CTA Section
+    cta: {
+      title: "Попробуйте бесплатный пробный период",
+      subtitle: "Без привязки карты. Без регистрации. Без ограничений",
+      button: "Начать в Telegram",
     },
   },
 }

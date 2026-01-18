@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 
-import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/components/language-provider"
@@ -32,7 +31,6 @@ export default function RootLayout({
         <ThemeProvider defaultTheme="dark" storageKey="vpn-theme">
           <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>
-        <Analytics />
       </body>
     </html>
   )

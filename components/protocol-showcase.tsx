@@ -8,8 +8,8 @@ import { useLanguage } from "./language-provider"
 
 const protocols = [
   { name: "VLESS", featured: true, icon: Zap },
-  { name: "VMess", featured: false, icon: Shield },
-  { name: "Trojan", featured: false, icon: Lock },
+  // { name: "VMess", featured: false, icon: Shield },
+  // { name: "Trojan", featured: false, icon: Lock },
   { name: "Shadowsocks", featured: false, icon: Network },
   { name: "WireGuard", featured: false, icon: Cpu },
 ]
@@ -18,7 +18,7 @@ export function ProtocolShowcase() {
   const { t } = useLanguage()
 
   return (
-    <section className="relative py-24 px-4 bg-muted/30">
+    <section id="protocols" className="relative py-24 px-4 bg-muted/30">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

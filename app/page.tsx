@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/hero-section"
 import { ServerLocations } from "@/components/server-locations"
 import { ProtocolShowcase } from "@/components/protocol-showcase"
 import { FeaturesGrid } from "@/components/features-grid"
+import { CtaSection } from "@/components/cta-section"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { LanguageToggle } from "@/components/language-toggle"
 
@@ -21,15 +22,16 @@ export default function Home() {
         <ServerLocations />
         <ProtocolShowcase />
         <FeaturesGrid />
+        <CtaSection />
 
         <footer className="border-t border-border/50 bg-background/50 backdrop-blur-sm py-12 px-4">
           <div className="max-w-6xl mx-auto text-center">
             <div className="mb-4">
-              <h3 className="text-2xl font-bold mb-2">VPN</h3>
-              <p className="text-muted-foreground">Next-generation secure connectivity</p>
+              <h3 className="text-2xl font-bold mb-2">IRIS</h3>
+              <p className="text-muted-foreground">High-Performance VPN</p>
             </div>
             <div className="text-sm text-muted-foreground">
-              <p>&copy; {new Date().getFullYear()} VPN. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} IRIS VPN. All rights reserved.</p>
             </div>
           </div>
         </footer>

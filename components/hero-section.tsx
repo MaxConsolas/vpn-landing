@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Shield, Zap, Globe } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "./language-provider"
 
@@ -44,25 +45,29 @@ export function HeroSection() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
           >
-            <Button
-              size="lg"
-              className="relative group overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-xl shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                <Zap className="h-5 w-5" />
-                {t.hero.getStarted}
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary via-chart-2 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </Button>
+            <Link href="https://t.me/IrisVPN_bot">
+              <Button
+                size="lg"
+                className="relative group overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-xl shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  <Zap className="h-5 w-5" />
+                  {t.hero.getStarted}
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary via-chart-2 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Button>
+            </Link>
 
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-2 border-primary/30 hover:border-primary hover:bg-primary/5 px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all duration-300 bg-transparent"
-            >
-              <Globe className="h-5 w-5 mr-2" />
-              {t.hero.viewLocations}
-            </Button>
+            <Link href="#locations">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-primary/30 hover:border-primary hover:bg-primary/5 px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all duration-300 bg-transparent"
+              >
+                <Globe className="h-5 w-5 mr-2" />
+                {t.hero.viewLocations}
+              </Button>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -73,7 +78,7 @@ export function HeroSection() {
           >
             {[
               { label: t.hero.stats.servers, value: "3" },
-              { label: t.hero.stats.protocols, value: "5+" },
+              { label: t.hero.stats.protocols, value: "1" },
               { label: t.hero.stats.uptime, value: "99.9%" },
             ].map((stat, index) => (
               <div key={index} className="space-y-2">

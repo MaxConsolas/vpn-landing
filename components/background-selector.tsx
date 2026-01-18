@@ -6,6 +6,7 @@ import { ScanLinesBackground } from "./backgrounds/scan-lines-bg"
 import { OscillatingWavesBg } from "./backgrounds/oscillating-waves-bg"
 import { WorldMapBg } from "./backgrounds/world-map-bg"
 import { useLanguage } from "./language-provider"
+import { AuroraBg } from "./backgrounds/aurora-bg"
 
 const backgrounds = {
   waves: { component: WaveLinesBackground, name: "waves" },
@@ -21,10 +22,10 @@ export function BackgroundSelector() {
 
   return (
     <>
-      <BackgroundComponent />
+      <AuroraBg />
 
       {/* Selector UI - positioned in bottom right */}
-      <div className="fixed bottom-4 right-4 z-50 bg-background/80 backdrop-blur-sm border border-border rounded-lg p-3">
+      {/* <div className="fixed bottom-4 right-4 z-50 bg-background/80 backdrop-blur-sm border border-border rounded-lg p-3">
         <p className="text-xs text-muted-foreground mb-2">{t.background.label}</p>
         <div className="flex flex-col gap-1">
           {Object.entries(backgrounds).map(([key, { name }]) => (
@@ -41,7 +42,7 @@ export function BackgroundSelector() {
             </button>
           ))}
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
