@@ -4,7 +4,7 @@ export const translations = {
     hero: {
       badge: "Protected by TLS 1.3",
       title: "IRIS",
-      subtitle: "Fast and secure VPN. No blocks. Based on",
+      subtitle: "Fast and secure VPN. No limits. Based on",
       protocol: "VLESS",
       protocolSuffix: "",
       getStarted: "Get Started",
@@ -94,7 +94,7 @@ export const translations = {
     hero: {
       badge: "Защищен TLS 1.3",
       title: "IRIS",
-      subtitle: "Быстрый и безопасный VPN. Без блокировок. На основе",
+      subtitle: "Быстрый и безопасный VPN. Без ограничений. На основе",
       protocol: "VLESS",
       protocolSuffix: "",
       getStarted: "Начать",

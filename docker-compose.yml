@@ -1,7 +1,8 @@
 services:
   web:
-    build: .
-    image: vpn-landing_web:latest
+    image: ${IMAGE_NAME}
+    env_file:
+      - .env.production
     deploy:
       replicas: 1
       placement:
